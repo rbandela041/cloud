@@ -6,4 +6,16 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: !Sub "sample-cicd-bucket-${AWS::Region}-${AWS::AccountId}"
+  
 
+  RahulEc2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0953476d60561c955  # Example AMI ID, replace with a valid one for your region
+      KeyName: mykey # Replace with your key pair name
+      Tags:
+        - Key: Name
+          Value: RahulEc2Instance
+        - Key: Environment
+          Value: Production
