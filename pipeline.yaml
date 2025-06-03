@@ -38,8 +38,11 @@ Resources:
                 Action:
                   - s3:*
                   - cloudformation:*
+                Resource: "*"
+              - Effect: Allow
+                Action:
                   - iam:PassRole
-                Resource: !GetAtt PipelineRole.Arn
+                Resource: "*"
   
   MyPipeline:
     Type: AWS::CodePipeline::Pipeline
