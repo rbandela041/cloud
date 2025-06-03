@@ -76,6 +76,8 @@ Resources:
                 StackName: MyAppStack
                 Capabilities: CAPABILITY_NAMED_IAM
                 TemplatePath: SourceOutput::templates/app-stack.yaml
+                RoleArn: !GetAtt PipelineRole.Arn
+
               InputArtifacts:
                 - Name: SourceOutput
               RunOrder: 1
